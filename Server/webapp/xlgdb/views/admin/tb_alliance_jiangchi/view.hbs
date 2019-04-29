@@ -1,0 +1,56 @@
+<h3>
+    <a href="{{{backurl}}}" class="actionBtn">返回奖池管理列表</a>
+    <p>{{{title}}}</p>
+</h3>
+<form>
+    <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+        <tr>
+            <td colspan="2" align="left" style="background-color: #0065B0;color:#fff">1底皮</td>
+        </tr>
+        <tr>
+            <td width="90" align="right">联盟ID</td>
+            <td align="left"><input type="text" name="allianceid" id="allianceid" value="{{row.allianceid}}" size="50"
+                    class="inpMain" /></td>
+        </tr>
+        <tr>
+            <td width="90" align="right">奖池金币数</td>
+            <td align="left"><input type="text" name="glods" id="glods" value="{{row.glods}}" size="50" class="inpMain" /></td>
+        </tr>
+        <tr>
+            <td width="90" align="right">天皇奖励比例</td>
+            <td align="left"><input type="text" name="tianhuang" id="tianhuang" value="{{row.tianhuang}}" size="50"
+                    class="inpMain" /></td>
+        </tr>
+        <tr>
+            <td width="90" align="right">朵皇奖励比例</td>
+            <td align="left"><input type="text" name="duohuang" id="duohuang" value="{{row.duohuang}}" size="50" class="inpMain" /></td>
+        </tr>
+        <tr>
+            <td width="90" align="right">朵朵朵奖励比例</td>
+            <td align="left"><input type="text" name="duoduoduo" id="duoduoduo" value="{{row.duoduoduo}}" size="50"
+                    class="inpMain" /></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td align="left"><input name="submit" id="submit" class="btn" type="button" value="提交" /></td>
+        </tr>
+    </table>
+</form>
+<script>
+    var url = '{{posturl}}';
+    $("#submit").click(function () {
+        var e = false;
+        var o = $("form").serializeJson();
+        $.ajax({
+            url: url,
+            method: 'POST',
+            dataType: 'json',
+            contentType: "application/json",
+            data: JSON.stringify(o),
+            error: function () { },
+            success: function (response) {
+                alert(response.errmsg);
+            }
+        })
+    });
+</script>

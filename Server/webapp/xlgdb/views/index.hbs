@@ -1,0 +1,15 @@
+<h1>Demo by {{author}}</h1>
+
+<p>{{author}}: welcome to homepage, I'm handsome!</p>
+
+let the magic begin
+
+{{#extend "stylesheets"}}
+<link rel="stylesheet" href="/css/index.css"/>
+{{/extend}}
+
+{{#extend "scripts"}}
+<script>
+  document.write('foo bar!');
+</script>
+{{/extend}}

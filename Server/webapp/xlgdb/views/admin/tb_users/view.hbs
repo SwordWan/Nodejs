@@ -1,0 +1,115 @@
+<h3>
+    <a href="{{{backurl}}}" class="actionBtn">返回管理员列表</a>
+    <p>{{{title}}}</p>
+</h3>
+<form>
+    <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+		<tr>
+			<td  width="90" align="right">account</td>
+			<td align="right"><input type="text" name="account" id="account" value="{{row.account}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">password</td>
+			<td align="right"><input type="text" name="password" id="password" value="{{row.password}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">userid</td>
+			<td align="right"><input type="text" name="userid" id="userid" value="{{row.userid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">alias</td>
+			<td align="right"><input type="text" name="alias" id="alias" value="{{row.alias}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">sex</td>
+			<td align="right"><input type="text" name="sex" id="sex" value="{{row.sex}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">headico</td>
+			<td align="right"><input type="text" name="headico" id="headico" value="{{row.headico}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">golds</td>
+			<td align="right"><input type="text" name="golds" id="golds" value="{{row.golds}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">gems</td>
+			<td align="right"><input type="text" name="gems" id="gems" value="{{row.gems}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">levels</td>
+			<td align="right"><input type="text" name="levels" id="levels" value="{{row.levels}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">roomid</td>
+			<td align="right"><input type="text" name="roomid" id="roomid" value="{{row.roomid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">ctime</td>
+			<td align="right"><input type="text" name="ctime" id="ctime" value="{{row.ctime}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">chgalias</td>
+			<td align="right"><input type="text" name="chgalias" id="chgalias" value="{{row.chgalias}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">clubnums</td>
+			<td align="right"><input type="text" name="clubnums" id="clubnums" value="{{row.clubnums}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">vipendtime</td>
+			<td align="right"><input type="text" name="vipendtime" id="vipendtime" value="{{row.vipendtime}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">lastlogintime</td>
+			<td align="right"><input type="text" name="lastlogintime" id="lastlogintime" value="{{row.lastlogintime}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">extdata</td>
+			<td align="right"><input type="text" name="extdata" id="extdata" value="{{row.extdata}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">clubid</td>
+			<td align="right"><input type="text" name="clubid" id="clubid" value="{{row.clubid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">roomclubid</td>
+			<td align="right"><input type="text" name="roomclubid" id="roomclubid" value="{{row.roomclubid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">mymsgcount</td>
+			<td align="right"><input type="text" name="mymsgcount" id="mymsgcount" value="{{row.mymsgcount}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td>&nbps;</td>
+			<td align="right"><input name="submit" id="submit" class="btn" type="button" value="提交" /></td>
+		</tr>
+    </table>
+</form>
+<script>
+    var edit = {{ edit }};
+    var url = '{{posturl}}';
+    $("#submit").click(function () {
+        var e = false;
+        var o = $("form").serializeJson();
+        do {
+            if (!edit) {
+
+            }
+
+            if (e) {
+                break;
+            }
+            $.ajax({
+                url: url,
+                method: 'POST',
+                dataType: 'json',
+                data: o,
+                error: function () { },
+                success: function (response) {
+                    $("#err_total").text(response.errmsg).show();
+                }
+            })
+        } while (false);
+    });
+</script>

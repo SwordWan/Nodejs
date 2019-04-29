@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>管理后台</title>
+    <link href="/admin/css/public.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/admin/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/admin/js/jquery.extend.js"></script>
+    <script type="text/javascript" src="/admin/js/global.js"></script>
+    <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+    <style>
+        em {
+            margin-left: 20px;
+        }
+
+        .go {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .go a {
+            color: #D9D9D9;
+            ;
+        }
+
+        .mybtn {
+            display: inline-block;
+            background-color: #28B779;
+            width: 120px;
+            height: 30px;
+            line-height: 30px;
+            color: #FFFFFF;
+            font-size: 13px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dcWrap">
+        <div id="dcHead">
+            <div id="head">
+                <div class="logo">
+                    <div class="go">
+                        <a href="/admin/tb_alliance_jiangchi/view/search">查询中心</a>
+                    </div>
+                </div>
+                <div class="nav">
+                    {{!--
+                    /admin/recharge/view/diamond
+                    <ul>
+                        <li class="M">
+                            <a href="JavaScript:void(0);" class="topAdd">新建</a>
+                            <div class="drop mTopad">
+                                <a href="/admin/manager/view-1">管理员</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="../index.php" target="_blank">查看站点</a>
+                        </li>
+                        <li>
+                            <a href="index.php?rec=clear_cache">清除缓存</a>
+                        </li>
+                        <li>
+                            <a href="http://help.douco.com" target="_blank">帮助</a>
+                        </li>
+                        <li class="noRight">
+                            <a href="module.html">DouPHP+</a>
+                        </li>
+                    </ul> --}}
+                    <ul class="navRight">
+                        <li class="M noLeft">
+                            {{!-- <a href="JavaScript:void(0);">您好，{{{decodeBase64 name}}}，金币数量：{{{fmtMoney coins
+                                0}}}，银行金币数量：{{{fmtMoney bank 0}}}</a> --}}
+                            {{!--
+                            <div class="drop mUser">
+                                <a href="manager.php?rec=edit&id=1">编辑我的个人资料</a>
+                                <a href="manager.php?rec=cloud_account">设置云账户</a>
+                            </div> --}}
+                        </li>
+                        <li class="noRight">
+                            <a href="/admin/signin/signout">退出</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- dcHead 结束 -->
+        <div id="dcLeft">
+            <div id="menu">
+                {{#each menu}}
+                <ul>
+                    {{#each this}} {{#if_equal ../../cur c2}}
+                    <li class="cur">
+                        <a href="{{href}}">
+                            {{!--
+                            <i class="{{c2}}"></i> --}}
+                            <em>{{name}}</em>
+                        </a>
+                    </li>
+                    {{else}}
+                    <li>
+                        <a href="{{href}}">
+                            {{!--
+                            <i class="{{c2}}"></i> --}}
+                            <em>{{name}}</em>
+                        </a>
+                    </li>
+                    {{/if_equal}} {{/each}}
+                </ul>
+                {{/each}}
+            </div>
+        </div>
+        <div id="dcMain">
+            <div id="urHere">查询中心 {{title}}</div>
+            <div id="index" class="mainBox" style="padding-top:18px;height:auto!important;height:550px;min-height:550px;">
+                <!-- 当前位置 -->
+                {{{body}}}
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div id="dcFooter">
+            <div id="footer">
+                <div class="line"></div>
+                <ul>
+                    版权所有 © 2018-2025 重庆昂勒斯特科技有限公司。
+                </ul>
+            </div>
+        </div>
+        <!-- dcFooter 结束 -->
+        <div class="clear"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<h3>
+    <a href="/admin/manager/view-1" class="actionBtn">创建管理员</a>
+    <p>管理员列表</p>
+</h3>
+<table width="100%" border="0" cellspacing="0" cellpadding="7" class="tableBasic">
+    <tr>
+		<th>uid</th>
+		<th>imgurl</th>
+		<th>ctime</th>
+		<th width="10%">操作</th>
+	</tr>
+    {{#each rows}}
+    <tr>
+		<td>{{uid}}</td>
+		<td>{{imgurl}}</td>
+		<td>{{ctime}}</td>
+		<td align="center"><a href="/admin/tb_sysnotice/view/update?id={{user_id}}&page={{../curr_page}}">编辑</a> | <a href="javascript:doDelete(id, '{{../curr_page}}')">删除</a></td>
+	</tr>
+    {{/each}}
+</table>
+{{> page}}
+
+<script>
+    function doDelete(id, url) {
+        if (confirm('确认要删除吗？') == true) {
+            $.ajax({
+                url: url,
+                method: 'GET',
+                dataType: 'json',
+                data: o,
+                error: function () { },
+                success: function (response) {
+                    if (response.errcode == 0) {
+                        alert('删除成功');
+                        window.location.reload(true);
+                    } else {
+                        alert('删除失败');
+                    }
+                }
+            });
+        }
+    }
+</script>

@@ -1,0 +1,68 @@
+<h3>
+    {{!-- <a href="/admin/tb_alliance_jiangchi/view/create" class="actionBtn">创建</a> --}}
+    <p>GPS设置</p>
+</h3>
+<form method="GET" action="/admin/tb_users/gps">
+    <div style="padding-bottom: 28px;">
+        <span style="font-size: 13px;">
+            请输入用户ID：<input name="userid" autocomplete="off" type="text" class="inpMain">
+        </span>
+        <button class="mybtn">查询</button>
+    </div>
+</form>
+{{#if_id_not_equal rowCount 0 }}
+<table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+    {{#each rows}}
+    <tr>
+        <td width="90" align="right">用户</td>
+        <td align="left">{{fromBase64 alias}}</td>
+    </tr>
+    <tr>
+        <td width="90" align="right">用户ID</td>
+        <td align="left">{{userid}}</td>
+    </tr>
+    <tr>
+        <td width="90" align="right">GPS状态</td>
+        <td align="left">{{fmtGPSState opengps}}</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td align="left">
+            {{#if_id_not_equal opengps 0 }}
+            <input onclick="submit(0,{{userid}})" class="btn" type="button" value="禁用" />
+            {{/if_id_not_equal}}
+            {{#if_id_not_equal opengps 1 }}
+            <input onclick="submit(1,{{userid}})" class="btn" type="button" value="启用" />
+           {{/if_id_not_equal}}
+        </td>
+    </tr>
+    {{/each}}
+</table>
+
+{{/if_id_not_equal}}
+
+<script>
+    function submit(opengps, userid) {
+        var o = {
+            userid: userid,
+            opengps: opengps
+        }
+
+        $.ajax({
+            url: '/admin/tb_users/gps/update',
+            method: 'POST',
+            dataType: 'json',
+            contentType: "application/json",
+            data: JSON.stringify(o),
+            error: function () { },
+            success: function (response) {
+                alert(response.errmsg);
+                if (response.errcode == 0) {
+                    window.location.reload();
+                }
+            }
+        });
+    }
+
+
+</script>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>管理中心登录</title>
+    <link href="/admin/css/public.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/admin/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/admin/js/jquery.extend.js"></script>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+             font-family: "Microsoft YaHei", "simsun", "Helvetica Neue", Arial, Helvetica, sans-serif;
+            background: url(/admin/images/sky.jpg) no-repeat;
+            background-position: center;
+        }
+
+        .signin-content {
+            /*padding-top: 300px;*/
+        }
+
+        .signin-form {
+            margin: auto;
+            margin-left:-250px;
+            margin-top:-150px;
+            width: 500px;
+            height: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            position:absolute;
+            top:50%;
+            left:50%;
+        }
+
+        .l {
+            padding: 10px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 24px;
+            padding: 20px;
+        }
+
+        input {
+            border-radius: 5px;
+            outline: none;
+            padding: 0px 10px 0px 10px;
+            width: 300px;
+            border: solid 1px #ddd;
+            font-size: 16px;
+            line-height: 24px;
+            height: 46px;
+        }
+
+        button {
+            background: #0ae;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            line-height: 24px;
+            height: 46px;
+            width: 320px;
+            cursor: pointer;
+            /*letter-spacing:10px;*/
+        }
+
+        .tips-relative {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            top: -43px;
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+
+        .tips {
+            width: 250px;
+            text-align: center;
+            background: #000000;
+            color: #ffffff;
+            margin: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signin-content ">
+        <form>
+            <div class="signin-form">
+                <h1>后台管理中心</h1>
+                <div>
+                    <input autocomplete="off" name="user" id="user" placeholder="登录帐号">
+                </div>
+                <div class="l">
+                    <input type="password" name="pass" id="pass" placeholder="登录密码">
+                </div>
+                <div class="l">
+                    <div class="tips-relative">
+                        <div class="tips">复制成功</div>
+                    </div>
+                </div>
+                <button type="button" onclick="signin()">登录</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        function signin() {
+            var o = $('form').serializeJson();
+            $.ajax({
+                url: '/admin/signin/signin',
+                method: 'POST',
+                dataType: 'json',
+                data: o,
+                error: function () { },
+                success: function (response) {
+                    if (response.errcode != 0) {
+                        $(".tips").text('用户名或密码错误');
+                        $(".tips-relative").css({ 'z-index': 1 }).animate({ opacity: 0.7 }, { duration: 1500 }).animate({ opacity: 0 }, { duration: 1500 }).promise().done(function () {
+                            $(this).css({ 'z-index': -1 });
+                        });
+                    } else {
+                        //window.location.href = '/admin/recharge/view/diamond'
+                        window.location.href = '/admin/tb_alliance_jiangchi/view/search';
+                    }
+                }
+            });
+
+        }
+    </script>
+</body>
+
+</html>

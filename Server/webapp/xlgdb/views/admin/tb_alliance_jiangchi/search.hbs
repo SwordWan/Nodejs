@@ -1,0 +1,89 @@
+<h3>
+    {{!-- <a href="/admin/tb_alliance_jiangchi/view/create" class="actionBtn">创建</a> --}}
+    <p>奖池设置</p>
+</h3>
+<form method="GET" action="/admin/tb_alliance_jiangchi/view/search">
+    <div style="padding-bottom: 28px;">
+        <span style="font-size: 13px;">
+            请输入联盟ID：<input name="allianceid" autocomplete="off" type="text" class="inpMain">
+        </span>
+        <button class="mybtn">查询</button>
+    </div>
+</form>
+{{#if_id_not_equal rowCount 0 }}
+
+<table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+    <tr>
+        <td width="90" align="right">联盟ID</td>
+        <td align="left">{{allianceid}}</td>
+    </tr>
+    {{#each rows}}
+    <tr>
+        <input id="level_{{@index}}" type="hidden" value="{{level}}">
+        <td colspan="2" align="left" style="background-color: #0065B0;color:#fff">底皮({{level}})</td>
+    </tr>
+    <tr>
+        <td width="90" align="right">奖池金币数</td>
+        <td align="left"><input type="text" autocomplete="off" id="golds_{{@index}}" value="{{golds}}" size="50" class="inpMain" /></td>
+    </tr>
+    <tr>
+        <td width="90" align="right">天皇奖励比例</td>
+        <td align="left"><input type="text" autocomplete="off" id="tianhuang_{{@index}}" value="{{tianhuang}}" size="50"
+                class="inpMain" /></td>
+    </tr>
+    <tr>
+        <td width="90" align="right">朵皇奖励比例</td>
+        <td align="left">
+            <input type="text" autocomplete="off" id="duohuang_{{@index}}" value="{{duohuang}}" size="50" class="inpMain" />
+        </td>
+    </tr>
+    <tr>
+        <td width="90" align="right">朵朵朵奖励比例</td>
+        <td align="left">
+            <input type="text" autocomplete="off" id="duoduoduo_{{@index}}" value="{{duoduoduo}}" size="50" class="inpMain" />
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td align="left">
+            <input onclick="submit({{@index}},0,{{uid}})" class="btn" type="button" value="设置全部" />
+            <input onclick="submit({{@index}},1,{{uid}})" class="btn" type="button" value="设置比例" />
+        </td>
+    </tr>
+    {{/each}}
+</table>
+
+{{/if_id_not_equal}}
+
+<script>
+    var urls = {{{ posturl }}};
+    var allianceid = '{{allianceid}}';
+    function submit(i, t, ii) {
+        var o = {
+            type: t,
+            allianceid: allianceid,
+            level: $('#level_' + i).val(),
+            golds: $('#golds_' + i).val(),
+            tianhuang: $('#tianhuang_' + i).val(),
+            duohuang: $('#duohuang_' + i).val(),
+            duoduoduo: $('#duoduoduo_' + i).val(),
+        }
+        var url = urls[0];
+        if (ii > 0) {
+            url = urls[1];
+        }
+        $.ajax({
+            url: url,
+            method: 'POST',
+            dataType: 'json',
+            contentType: "application/json",
+            data: JSON.stringify(o),
+            error: function () { },
+            success: function (response) {
+                alert(response.errmsg);
+            }
+        });
+    }
+
+
+</script>

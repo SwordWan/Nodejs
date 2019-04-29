@@ -1,0 +1,369 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset134 \'cb\'ce\'cc\'e5;}}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa200\sl276\slmult1\lang2052\f0\fs22 BigInteger.js Build Status Coverage Status Monthly Downloads\par
+BigInteger.js is an arbitrary-length integer library for Javascript, allowing arithmetic operations on integers of unlimited size, notwithstanding memory and time limitations.\par
+\par
+Installation\par
+If you are using a browser, you can download BigInteger.js from GitHub or just hotlink to it:\par
+\par
+<script src="http://peterolson.github.com/BigInteger.js/BigInteger.min.js"></script>\par
+If you are using node, you can install BigInteger with npm.\par
+\par
+npm install big-integer\par
+Then you can include it in your code:\par
+\par
+var bigInt = require("big-integer");\par
+Usage\par
+bigInt(number, [base])\par
+You can create a bigInt by calling the bigInt function. You can pass in\par
+\par
+a string, which it will parse as an bigInt and throw an "Invalid integer" error if the parsing fails.\par
+a Javascript number, which it will parse as an bigInt and throw an "Invalid integer" error if the parsing fails.\par
+another bigInt.\par
+nothing, and it will return bigInt.zero.\par
+If you provide a second parameter, then it will parse number as a number in base base. Note that base can be any bigInt (even negative or zero). The letters "a-z" and "A-Z" will be interpreted as the numbers 10 to 35. Higher digits can be specified in angle brackets (< and >).\par
+\par
+Examples:\par
+\par
+var zero = bigInt();\par
+var ninetyThree = bigInt(93);\par
+var largeNumber = bigInt("75643564363473453456342378564387956906736546456235345");\par
+var googol = bigInt("1e100");\par
+var bigNumber = bigInt(largeNumber);\par
+ \par
+var maximumByte = bigInt("FF", 16);\par
+var fiftyFiveGoogol = bigInt("<55>0", googol);\par
+Note that Javascript numbers larger than 9007199254740992 and smaller than -9007199254740992 are not precisely represented numbers and will not produce exact results. If you are dealing with numbers outside that range, it is better to pass in strings.\par
+\par
+Method Chaining\par
+Note that bigInt operations return bigInts, which allows you to chain methods, for example:\par
+\par
+var salary = bigInt(dollarsPerHour).times(hoursWorked).plus(randomBonuses)\par
+Constants\par
+There are three named constants already stored that you do not have to construct with the bigInt function yourself:\par
+\par
+bigInt.one, equivalent to bigInt(1)\par
+bigInt.zero, equivalent to bigInt(0)\par
+bigInt.minusOne, equivalent to bigInt(-1)\par
+The numbers from -999 to 999 are also already prestored and can be accessed using bigInt[index], for example:\par
+\par
+bigInt[-999], equivalent to bigInt(-999)\par
+bigInt[256], equivalent to bigInt(256)\par
+Methods\par
+abs()\par
+Returns the absolute value of a bigInt.\par
+\par
+bigInt(-45).abs() => 45\par
+bigInt(45).abs() => 45\par
+add(number)\par
+Performs addition.\par
+\par
+bigInt(5).add(7) => 12\par
+View benchmarks for this method\par
+\par
+and(number)\par
+Performs the bitwise AND operation. The operands are treated as if they were represented using two's complement representation.\par
+\par
+bigInt(6).and(3) => 2\par
+bigInt(6).and(-3) => 4\par
+compare(number)\par
+Performs a comparison between two numbers. If the numbers are equal, it returns 0. If the first number is greater, it returns 1. If the first number is lesser, it returns -1.\par
+\par
+bigInt(5).compare(5) => 0\par
+bigInt(5).compare(4) => 1\par
+bigInt(4).compare(5) => -1\par
+compareAbs(number)\par
+Performs a comparison between the absolute value of two numbers.\par
+\par
+bigInt(5).compareAbs(-5) => 0\par
+bigInt(5).compareAbs(4) => 1\par
+bigInt(4).compareAbs(-5) => -1\par
+compareTo(number)\par
+Alias for the compare method.\par
+\par
+divide(number)\par
+Performs integer division, disregarding the remainder.\par
+\par
+bigInt(59).divide(5) => 11\par
+View benchmarks for this method\par
+\par
+divmod(number)\par
+Performs division and returns an object with two properties: quotient and remainder. The sign of the remainder will match the sign of the dividend.\par
+\par
+bigInt(59).divmod(5) => \{quotient: bigInt(11), remainder: bigInt(4) \}\par
+bigInt(-5).divmod(2) => \{quotient: bigInt(-2), remainder: bigInt(-1) \}\par
+View benchmarks for this method\par
+\par
+eq(number)\par
+Alias for the equals method.\par
+\par
+equals(number)\par
+Checks if two numbers are equal.\par
+\par
+bigInt(5).equals(5) => true\par
+bigInt(4).equals(7) => false\par
+geq(number)\par
+Alias for the greaterOrEquals method.\par
+\par
+greater(number)\par
+Checks if the first number is greater than the second.\par
+\par
+bigInt(5).greater(6) => false\par
+bigInt(5).greater(5) => false\par
+bigInt(5).greater(4) => true\par
+greaterOrEquals(number)\par
+Checks if the first number is greater than or equal to the second.\par
+\par
+bigInt(5).greaterOrEquals(6) => false\par
+bigInt(5).greaterOrEquals(5) => true\par
+bigInt(5).greaterOrEquals(4) => true\par
+gt(number)\par
+Alias for the greater method.\par
+\par
+isDivisibleBy(number)\par
+Returns true if the first number is divisible by the second number, false otherwise.\par
+\par
+bigInt(999).isDivisibleBy(333) => true\par
+bigInt(99).isDivisibleBy(5) => false\par
+isEven()\par
+Returns true if the number is even, false otherwise.\par
+\par
+bigInt(6).isEven() => true\par
+bigInt(3).isEven() => false\par
+isNegative()\par
+Returns true if the number is negative, false otherwise. Returns false for 0 and -0.\par
+\par
+bigInt(-23).isNegative() => true\par
+bigInt(50).isNegative() => false\par
+isOdd()\par
+Returns true if the number is odd, false otherwise.\par
+\par
+bigInt(13).isOdd() => true\par
+bigInt(40).isOdd() => false\par
+isPositive()\par
+Return true if the number is positive, false otherwise. Returns false for 0 and -0.\par
+\par
+bigInt(54).isPositive() => true\par
+bigInt(-1).isPositive() => false\par
+isPrime()\par
+Returns true if the number is prime, false otherwise.\par
+\par
+bigInt(5).isPrime() => true\par
+bigInt(6).isPrime() => false\par
+isProbablePrime([iterations])\par
+Returns true if the number is very likely to be prime, false otherwise. Argument is optional and determines the amount of iterations of the test (default: 5). The more iterations, the lower chance of getting a false positive. This uses the Fermat primality test.\par
+\par
+bigInt(5).isProbablePrime() => true\par
+bigInt(49).isProbablePrime() => false\par
+bigInt(1729).isProbablePrime(50) => false\par
+Note that this function is not deterministic, since it relies on random sampling of factors, so the result for some numbers is not always the same. Carmichael numbers are particularly prone to give unreliable results.\par
+\par
+For example, bigInt(1729).isProbablePrime() returns false about 76% of the time and true about 24% of the time. The correct result is false.\par
+\par
+isUnit()\par
+Returns true if the number is 1 or -1, false otherwise.\par
+\par
+bigInt.one.isUnit() => true\par
+bigInt.minusOne.isUnit() => true\par
+bigInt(5).isUnit() => false\par
+isZero()\par
+Return true if the number is 0 or -0, false otherwise.\par
+\par
+bigInt.zero.isZero() => true\par
+bigInt("-0").isZero() => true\par
+bigInt(50).isZero() => false\par
+leq(number)\par
+Alias for the lesserOrEquals method.\par
+\par
+lesser(number)\par
+Checks if the first number is lesser than the second.\par
+\par
+bigInt(5).lesser(6) => true\par
+bigInt(5).lesser(5) => false\par
+bigInt(5).lesser(4) => false\par
+lesserOrEquals(number)\par
+Checks if the first number is less than or equal to the second.\par
+\par
+bigInt(5).lesserOrEquals(6) => true\par
+bigInt(5).lesserOrEquals(5) => true\par
+bigInt(5).lesserOrEquals(4) => false\par
+lt(number)\par
+Alias for the lesser method.\par
+\par
+minus(number)\par
+Alias for the subtract method.\par
+\par
+bigInt(3).minus(5) => -2\par
+View benchmarks for this method\par
+\par
+mod(number)\par
+Performs division and returns the remainder, disregarding the quotient. The sign of the remainder will match the sign of the dividend.\par
+\par
+bigInt(59).mod(5) => 4\par
+bigInt(-5).mod(2) => -1\par
+View benchmarks for this method\par
+\par
+modInv(mod)\par
+Finds the multiplicative inverse of the number modulo mod.\par
+\par
+bigInt(3).modInv(11) => 4\par
+bigInt(42).modInv(2017) => 1969\par
+modPow(exp, mod)\par
+Takes the number to the power exp modulo mod.\par
+\par
+bigInt(10).modPow(3, 30) => 10\par
+multiply(number)\par
+Performs multiplication.\par
+\par
+bigInt(111).multiply(111) => 12321\par
+View benchmarks for this method\par
+\par
+neq(number)\par
+Alias for the notEquals method.\par
+\par
+next()\par
+Adds one to the number.\par
+\par
+bigInt(6).next() => 7\par
+not()\par
+Performs the bitwise NOT operation. The operands are treated as if they were represented using two's complement representation.\par
+\par
+bigInt(10).not() => -11\par
+bigInt(0).not() => -1\par
+notEquals(number)\par
+Checks if two numbers are not equal.\par
+\par
+bigInt(5).notEquals(5) => false\par
+bigInt(4).notEquals(7) => true\par
+or(number)\par
+Performs the bitwise OR operation. The operands are treated as if they were represented using two's complement representation.\par
+\par
+bigInt(13).or(10) => 15\par
+bigInt(13).or(-8) => -3\par
+over(number)\par
+Alias for the divide method.\par
+\par
+bigInt(59).over(5) => 11\par
+View benchmarks for this method\par
+\par
+plus(number)\par
+Alias for the add method.\par
+\par
+bigInt(5).plus(7) => 12\par
+View benchmarks for this method\par
+\par
+pow(number)\par
+Performs exponentiation. If the exponent is less than 0, pow returns 0. bigInt.zero.pow(0) returns 1.\par
+\par
+bigInt(16).pow(16) => 18446744073709551616\par
+View benchmarks for this method\par
+\par
+prev(number)\par
+Subtracts one from the number.\par
+\par
+bigInt(6).prev() => 5\par
+remainder(number)\par
+Alias for the mod method.\par
+\par
+View benchmarks for this method\par
+\par
+shiftLeft(n)\par
+Shifts the number left by n places in its binary representation. If a negative number is provided, it will shift right. Throws an error if n is outside of the range [-9007199254740992, 9007199254740992].\par
+\par
+bigInt(8).shiftLeft(2) => 32\par
+bigInt(8).shiftLeft(-2) => 2\par
+shiftRight(n)\par
+Shifts the number right by n places in its binary representation. If a negative number is provided, it will shift left. Throws an error if n is outside of the range [-9007199254740992, 9007199254740992].\par
+\par
+bigInt(8).shiftRight(2) => 2\par
+bigInt(8).shiftRight(-2) => 32\par
+square()\par
+Squares the number\par
+\par
+bigInt(3).square() => 9\par
+View benchmarks for this method\par
+\par
+subtract(number)\par
+Performs subtraction.\par
+\par
+bigInt(3).subtract(5) => -2\par
+View benchmarks for this method\par
+\par
+times(number)\par
+Alias for the multiply method.\par
+\par
+bigInt(111).times(111) => 12321\par
+View benchmarks for this method\par
+\par
+toJSNumber()\par
+Converts a bigInt into a native Javascript number. Loses precision for numbers outside the range [-9007199254740992, 9007199254740992].\par
+\par
+bigInt("18446744073709551616").toJSNumber() => 18446744073709552000\par
+xor(number)\par
+Performs the bitwise XOR operation. The operands are treated as if they were represented using two's complement representation.\par
+\par
+bigInt(12).xor(5) => 9\par
+bigInt(12).xor(-5) => -9\par
+Static Methods\par
+fromArray(digits, base = 10, isNegative?)\par
+Constructs a bigInt from an array of digits in base base. The optional isNegative flag will make the number negative.\par
+\par
+bigInt.fromArray([1, 2, 3, 4, 5], 10) => 12345\par
+bigInt.fromArray([1, 0, 0], 2, true) => -4\par
+gcd(a, b)\par
+Finds the greatest common denominator of a and b.\par
+\par
+bigInt.gcd(42,56) => 14\par
+isInstance(x)\par
+Returns true if x is a BigInteger, false otherwise.\par
+\par
+bigInt.isInstance(bigInt(14)) => true\par
+bigInt.isInstance(14) => false\par
+lcm(a,b)\par
+Finds the least common multiple of a and b.\par
+\par
+bigInt.lcm(21, 6) => 42\par
+max(a,b)\par
+Returns the largest of a and b.\par
+\par
+bigInt.max(77, 432) => 432\par
+min(a,b)\par
+Returns the smallest of a and b.\par
+\par
+bigInt.min(77, 432) => 77\par
+randBetween(min, max)\par
+Returns a random number between min and max.\par
+\par
+bigInt.randBetween("-1e100", "1e100") => (for example) 8494907165436643479673097939554427056789510374838494147955756275846226209006506706784609314471378745\par
+Override Methods\par
+toString(radix = 10)\par
+Converts a bigInt to a string. There is an optional radix parameter (which defaults to 10) that converts the number to the given radix. Digits in the range 10-35 will use the letters a-z.\par
+\par
+bigInt("1e9").toString() => "1000000000"\par
+bigInt("1e9").toString(16) => "3b9aca00"\par
+Note that arithmetical operators will trigger the valueOf function rather than the toString function. When converting a bigInteger to a string, you should use the toString method or the String function instead of adding the empty string.\par
+\par
+bigInt("999999999999999999").toString() => "999999999999999999"\par
+String(bigInt("999999999999999999")) => "999999999999999999"\par
+bigInt("999999999999999999") + "" => 1000000000000000000\par
+Bases larger than 36 are supported. If a digit is greater than or equal to 36, it will be enclosed in angle brackets.\par
+\par
+bigInt(567890).toString(100) => "<56><78><90>"\par
+Negative bases are also supported.\par
+\par
+bigInt(12345).toString(-10) => "28465"\par
+Base 1 and base -1 are also supported.\par
+\par
+bigInt(-15).toString(1) => "-111111111111111"\par
+bigInt(-15).toString(-1) => "101010101010101010101010101010"\par
+Base 0 is only allowed for the number zero.\par
+\par
+bigInt(0).toString(0) => 0\par
+bigInt(1).toString(0) => Error: Cannot convert nonzero numbers to base 0.\par
+View benchmarks for this method\par
+\par
+valueOf()\par
+Converts a bigInt to a native Javascript number. This override allows you to use native arithmetic operators without explicit conversion:\par
+\par
+bigInt("100") + bigInt("200") === 300; //true\par
+}
+ 

@@ -1,0 +1,67 @@
+<h3>
+    <a href="{{{backurl}}}" class="actionBtn">返回管理员列表</a>
+    <p>{{{title}}}</p>
+</h3>
+<form>
+    <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+		<tr>
+			<td  width="90" align="right">fromname</td>
+			<td align="right"><input type="text" name="fromname" id="fromname" value="{{row.fromname}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">toname</td>
+			<td align="right"><input type="text" name="toname" id="toname" value="{{row.toname}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">desc</td>
+			<td align="right"><input type="text" name="desc" id="desc" value="{{row.desc}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">type</td>
+			<td align="right"><input type="text" name="type" id="type" value="{{row.type}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">userid</td>
+			<td align="right"><input type="text" name="userid" id="userid" value="{{row.userid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">uid</td>
+			<td align="right"><input type="text" name="uid" id="uid" value="{{row.uid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">clubid_allianceid</td>
+			<td align="right"><input type="text" name="clubid_allianceid" id="clubid_allianceid" value="{{row.clubid_allianceid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td>&nbps;</td>
+			<td align="right"><input name="submit" id="submit" class="btn" type="button" value="提交" /></td>
+		</tr>
+    </table>
+</form>
+<script>
+    var edit = {{ edit }};
+    var url = '{{posturl}}';
+    $("#submit").click(function () {
+        var e = false;
+        var o = $("form").serializeJson();
+        do {
+            if (!edit) {
+
+            }
+
+            if (e) {
+                break;
+            }
+            $.ajax({
+                url: url,
+                method: 'POST',
+                dataType: 'json',
+                data: o,
+                error: function () { },
+                success: function (response) {
+                    $("#err_total").text(response.errmsg).show();
+                }
+            })
+        } while (false);
+    });
+</script>

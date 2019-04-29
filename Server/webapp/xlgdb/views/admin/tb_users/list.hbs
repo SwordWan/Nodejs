@@ -1,0 +1,75 @@
+<h3>
+    <a href="/admin/manager/view-1" class="actionBtn">创建管理员</a>
+    <p>管理员列表</p>
+</h3>
+<table width="100%" border="0" cellspacing="0" cellpadding="7" class="tableBasic">
+    <tr>
+		<th>account</th>
+		<th>password</th>
+		<th>userid</th>
+		<th>alias</th>
+		<th>sex</th>
+		<th>headico</th>
+		<th>golds</th>
+		<th>gems</th>
+		<th>levels</th>
+		<th>roomid</th>
+		<th>ctime</th>
+		<th>chgalias</th>
+		<th>clubnums</th>
+		<th>vipendtime</th>
+		<th>lastlogintime</th>
+		<th>extdata</th>
+		<th>clubid</th>
+		<th>roomclubid</th>
+		<th>mymsgcount</th>
+		<th width="10%">操作</th>
+	</tr>
+    {{#each rows}}
+    <tr>
+		<td>{{account}}</td>
+		<td>{{password}}</td>
+		<td>{{userid}}</td>
+		<td>{{alias}}</td>
+		<td>{{sex}}</td>
+		<td>{{headico}}</td>
+		<td>{{golds}}</td>
+		<td>{{gems}}</td>
+		<td>{{levels}}</td>
+		<td>{{roomid}}</td>
+		<td>{{ctime}}</td>
+		<td>{{chgalias}}</td>
+		<td>{{clubnums}}</td>
+		<td>{{vipendtime}}</td>
+		<td>{{lastlogintime}}</td>
+		<td>{{extdata}}</td>
+		<td>{{clubid}}</td>
+		<td>{{roomclubid}}</td>
+		<td>{{mymsgcount}}</td>
+		<td align="center"><a href="/admin/tb_users/view/update?id={{user_id}}&page={{../curr_page}}">编辑</a> | <a href="javascript:doDelete(id, '{{../curr_page}}')">删除</a></td>
+	</tr>
+    {{/each}}
+</table>
+{{> page}}
+
+<script>
+    function doDelete(id, url) {
+        if (confirm('确认要删除吗？') == true) {
+            $.ajax({
+                url: url,
+                method: 'GET',
+                dataType: 'json',
+                data: o,
+                error: function () { },
+                success: function (response) {
+                    if (response.errcode == 0) {
+                        alert('删除成功');
+                        window.location.reload(true);
+                    } else {
+                        alert('删除失败');
+                    }
+                }
+            });
+        }
+    }
+</script>

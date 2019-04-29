@@ -1,0 +1,75 @@
+<h3>
+    <a href="{{{backurl}}}" class="actionBtn">返回管理员列表</a>
+    <p>{{{title}}}</p>
+</h3>
+<form>
+    <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+		<tr>
+			<td  width="90" align="right">userclub</td>
+			<td align="right"><input type="text" name="userclub" id="userclub" value="{{row.userclub}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">userid</td>
+			<td align="right"><input type="text" name="userid" id="userid" value="{{row.userid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">ctime</td>
+			<td align="right"><input type="text" name="ctime" id="ctime" value="{{row.ctime}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">clubid</td>
+			<td align="right"><input type="text" name="clubid" id="clubid" value="{{row.clubid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">uid</td>
+			<td align="right"><input type="text" name="uid" id="uid" value="{{row.uid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">infos</td>
+			<td align="right"><input type="text" name="infos" id="infos" value="{{row.infos}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">roomcreator</td>
+			<td align="right"><input type="text" name="roomcreator" id="roomcreator" value="{{row.roomcreator}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">roomuuid</td>
+			<td align="right"><input type="text" name="roomuuid" id="roomuuid" value="{{row.roomuuid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">roomid</td>
+			<td align="right"><input type="text" name="roomid" id="roomid" value="{{row.roomid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td>&nbps;</td>
+			<td align="right"><input name="submit" id="submit" class="btn" type="button" value="提交" /></td>
+		</tr>
+    </table>
+</form>
+<script>
+    var edit = {{ edit }};
+    var url = '{{posturl}}';
+    $("#submit").click(function () {
+        var e = false;
+        var o = $("form").serializeJson();
+        do {
+            if (!edit) {
+
+            }
+
+            if (e) {
+                break;
+            }
+            $.ajax({
+                url: url,
+                method: 'POST',
+                dataType: 'json',
+                data: o,
+                error: function () { },
+                success: function (response) {
+                    $("#err_total").text(response.errmsg).show();
+                }
+            })
+        } while (false);
+    });
+</script>

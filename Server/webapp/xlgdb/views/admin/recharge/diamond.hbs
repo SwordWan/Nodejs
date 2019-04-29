@@ -1,0 +1,49 @@
+<h3>
+	{{!-- <a href="{{{backurl}}}" class="actionBtn">返回管理员列表</a> --}}
+	<p>{{{title}}}</p>
+</h3>
+<form>
+	<input type="hidden" id="diamond_time" name="diamond_time" value="{{diamond_time}}">
+	<table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+		<tr>
+			<td width="90" align="right">赠送用户</td>
+			<td align="left"><input type="text" name="userid" id="userid" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td width="90" align="right">数量</td>
+			<td align="left"><input type="text" name="diamond" id="diamond" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td width="90" align="right">&nbsp;</td>
+			<td align="left"><input name="submit" id="submit" class="btn" type="button" value="提交" /></td>
+		</tr>
+	</table>
+</form>
+<script>
+	$("#submit").click(function () {
+		var o = $("form").serializeJson();
+		do {
+			if (!/^[1-9]\d*$/.test(o.userid)) {
+				alert('用户序号不正确');
+				break;
+			}
+			if (!/^[1-9]\d*$/.test(o.diamond)) {
+				alert('数量不正确');
+				break;
+			}
+			$.ajax({
+				url: '/admin/recharge/ajax/diamond',
+				method: 'POST',
+				dataType: 'json',
+				data: o,
+				error: function () {
+					alert('网络或服务器错误');
+				},
+				success: function (response) {
+					alert(response.errmsg);
+					$('#diamond_time').val(response.diamond_time);
+				}
+			})
+		} while (false);
+	});
+</script>

@@ -1,0 +1,65 @@
+<h3>
+    <a href="/admin/manager/view-1" class="actionBtn">创建管理员</a>
+    <p>管理员列表</p>
+</h3>
+<table width="100%" border="0" cellspacing="0" cellpadding="7" class="tableBasic">
+    <tr>
+		<th>userid</th>
+		<th>clubid</th>
+		<th>ctime</th>
+		<th>jifen</th>
+		<th>golds</th>
+		<th>clublevel</th>
+		<th>alliancelevel</th>
+		<th>status</th>
+		<th>uid</th>
+		<th>playtimes</th>
+		<th>jiesuan</th>
+		<th>forsearch</th>
+		<th>extdata</th>
+		<th>memo</th>
+		<th width="10%">操作</th>
+	</tr>
+    {{#each rows}}
+    <tr>
+		<td>{{userid}}</td>
+		<td>{{clubid}}</td>
+		<td>{{ctime}}</td>
+		<td>{{jifen}}</td>
+		<td>{{golds}}</td>
+		<td>{{clublevel}}</td>
+		<td>{{alliancelevel}}</td>
+		<td>{{status}}</td>
+		<td>{{uid}}</td>
+		<td>{{playtimes}}</td>
+		<td>{{jiesuan}}</td>
+		<td>{{forsearch}}</td>
+		<td>{{extdata}}</td>
+		<td>{{memo}}</td>
+		<td align="center"><a href="/admin/tb_joinclubs/view/update?id={{user_id}}&page={{../curr_page}}">编辑</a> | <a href="javascript:doDelete(id, '{{../curr_page}}')">删除</a></td>
+	</tr>
+    {{/each}}
+</table>
+{{> page}}
+
+<script>
+    function doDelete(id, url) {
+        if (confirm('确认要删除吗？') == true) {
+            $.ajax({
+                url: url,
+                method: 'GET',
+                dataType: 'json',
+                data: o,
+                error: function () { },
+                success: function (response) {
+                    if (response.errcode == 0) {
+                        alert('删除成功');
+                        window.location.reload(true);
+                    } else {
+                        alert('删除失败');
+                    }
+                }
+            });
+        }
+    }
+</script>

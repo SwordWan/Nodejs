@@ -1,0 +1,246 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset134 \'cb\'ce\'cc\'e5;}}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa200\sl276\slmult1\lang2052\f0\fs22 n64\par
+Optimized int64 object for javascript.\par
+\par
+There are a few different int64 libraries which currently exist for javascript. Some native, some non-native. Most are lacking test coverage. n64 gives you a native and non-native version which both have full test coverage.\par
+\par
+Install\par
+$ npm install n64\par
+Usage\par
+const \{U64, I64\} = require('n64');\par
+\par
+console.log(U64(0x12345678900).muln(0x12345678));\par
+console.log(I64(0x12345678900).muln(0x12345678));\par
+Outputs:\par
+\par
+<U64: 13145376755874150400>\par
+<I64: -5301367317835401216>\par
+API\par
+n64 tries to mimic the bn.js API as much as possible. Like bn.js, each method follows a pattern of (i?)(operation)(n?).\par
+\par
+Prefixes\par
+i - Perform the operation in-place.\par
+Postfixes\par
+n - Function must be passed a 32 bit javascript number.\par
+For example, a.add(b) will clone the current object, do the addition, and return a new object. a.iadd(b) will do the addition in place. a.addn(b) will do the "cloned" addition with b being a 32 bit JS number, and a.iaddn(b) will do the same thing in-place.\par
+\par
+Constructor\par
+There are two constructors: U64 and I64, both containing the same methods. The N64 object documented below applies to both n64.U64 and n64.I64.\par
+\par
+new N64() - Instantiate.\par
+new N64(num) - Instantiate from JS number.\par
+new N64(bool) - Instantiate from boolean.\par
+new N64(hi, lo) - Instantiate from hi/lo bits.\par
+new N64(obj) - Instantiate from object (hi & lo).\par
+new N64(str, base?) - Instantiate from string.\par
+new N64(bn) - Instantiate from bn.js bignumber.\par
+new N64(data) - Instantiate from bytes (little endian).\par
+Properties\par
+hi - Internal hi bits (int32).\par
+lo - Internal lo bits (int32).\par
+sign - Whether the int64 is signed (0 or 1).\par
+Static Methods\par
+N64.min(a, b) - Pick min value.\par
+N64.max(a, b) - Pick max value.\par
+N64.random() - Instantiate random int64.\par
+N64.pow(num, exp) - Instantiate from number and power.\par
+N64.shift(num, bits) - Instantiate from left shift.\par
+N64.readLE(data, off) - Instantiate from data at off (little endian).\par
+N64.readBE(data, off) - Instantiate from data at off (big endian).\par
+N64.readRaw(data, off) - Instantiate from data at off (little endian).\par
+N64.fromNumber(num) - Instantiate from JS number.\par
+N64.fromInt(lo) - Instantiate from lo bits.\par
+N64.fromBool(value) - Instantiate from boolean.\par
+N64.fromBits(hi, lo) - Instantiate from hi/lo bits.\par
+N64.fromObject(obj) - Instantiate from object (hi & lo).\par
+N64.fromString(str, base?) - Instantiate from string.\par
+N64.fromJSON(json) - Instantiate from JSON.\par
+N64.fromBN(bn) - Instantiate from bn.js bignumber.\par
+N64.fromLE(data) - Instantiate from bytes (little endian).\par
+N64.fromBE(data) - Instantiate from bytes (big endian).\par
+N64.fromRaw(data) - Instantiate from bytes (little endian).\par
+N64.from() - Instantiate.\par
+N64.from(num) - Instantiate from JS number.\par
+N64.from(bool) - Instantiate from boolean.\par
+N64.from(hi, lo) - Instantiate from hi/lo bits.\par
+N64.from(obj) - Instantiate from object (hi & lo).\par
+N64.from(str, base?) - Instantiate from string.\par
+N64.from(bn) - Instantiate from bn.js bignumber.\par
+N64.from(data) - Instantiate from bytes (little endian).\par
+N64.isN64(obj) - Test instanceof N64.\par
+N64.isU64(obj) - Test instanceof U64.\par
+N64.isI64(obj) - Test instanceof I64.\par
+Methods\par
+Arithmetic\par
+N64#iadd(obj) - In-place addition with another int64.\par
+N64#iaddn(num) - In-place addition with a JS number.\par
+N64#add(obj) - Cloned addition with another int64.\par
+N64#addn(num) - Cloned addition with a JS number.\par
+N64#isub(obj) - In-place subtraction with another int64.\par
+N64#isubn(num) - In-place subtraction with a JS number.\par
+N64#sub(obj) - Cloned subtraction with another int64.\par
+N64#subn(num) - Cloned subtraction with a JS number.\par
+N64#imul(obj) - In-place multiplication with another int64.\par
+N64#imuln(num) - In-place multiplication with a JS number.\par
+N64#mul(obj) - Cloned multiplication with another int64.\par
+N64#muln(num) - Cloned multiplication with a JS number.\par
+N64#idiv(obj) - In-place division with another int64.\par
+N64#idivn(num) - In-place division with a JS number.\par
+N64#div(obj) - Cloned division with another int64.\par
+N64#divn(num) - Cloned division with a JS number.\par
+N64#imod(obj) - In-place modulo with another int64.\par
+N64#imodn(num) - In-place modulo with a JS number.\par
+N64#mod(obj) - Cloned modulo with another int64.\par
+N64#modn(num) - Cloned modulo with a JS number.\par
+N64#ipow(obj) - In-place exponentiation with another int64.\par
+N64#ipown(num) - In-place exponentiation with a JS number.\par
+N64#pow(obj) - Cloned exponentiation with another int64.\par
+N64#pown(num) - Cloned exponentiation with a JS number.\par
+N64#isqr() - Square number in-place.\par
+N64#sqr() - Clone and square number.\par
+Bitwise\par
+N64#iand(obj) - In-place AND with another int64.\par
+N64#iandn(num) - In-place AND with a JS number.\par
+N64#and(obj) - Cloned AND with another int64.\par
+N64#andn(num) - Cloned AND with a JS number.\par
+N64#ior(obj) - In-place OR with another int64.\par
+N64#iorn(num) - In-place OR with a JS number.\par
+N64#or(obj) - Cloned OR with another int64.\par
+N64#orn(num) - Cloned OR with a JS number.\par
+N64#ixor(obj) - In-place XOR with another int64.\par
+N64#ixorn(num) - In-place XOR with a JS number.\par
+N64#xor(obj) - Cloned XOR with another int64.\par
+N64#xorn(num) - Cloned XOR with a JS number.\par
+N64#inot() - In-place NOT.\par
+N64#not() - Cloned NOT.\par
+N64#ishl(obj) - In-place left-shift with another int64.\par
+N64#ishln(num) - In-place left-shift with a JS number.\par
+N64#shl(obj) - Cloned left-shift with another int64.\par
+N64#shln(num) - Cloned left-shift with a JS number.\par
+N64#ishr(obj) - In-place right-shift with another int64.\par
+N64#ishrn(num) - In-place right-shift with a JS number.\par
+N64#shr(obj) - Cloned right-shift with another int64.\par
+N64#shrn(num) - Cloned right-shift with a JS number.\par
+N64#iushr(obj) - In-place unsigned right-shift with another int64.\par
+N64#iushrn(num) - In-place unsigned right-shift with a JS number.\par
+N64#ushr(obj) - Cloned unsigned right-shift with another int64.\par
+N64#ushrn(num) - Cloned unsigned right-shift with a JS number.\par
+N64#setn(bit, val) - Set specified bit to val (in-place).\par
+N64#testn(bit) - Test whether a bit is set.\par
+N64#setb(pos, ch) - Set byte ch at position pos (in-place).\par
+N64#orb(pos, ch) - OR byte ch at position pos (in-place).\par
+N64#getb(pos) - Get byte at position pos.\par
+N64#imaskn(bit) - Clear bits higher or equal to bit (in-place).\par
+N64#maskn(bit) - Clear bits higher or equal to bit.\par
+N64#andln(num) - Perform AND on lo 32 bits (returns JS number).\par
+Negation\par
+N64#ineg() - In-place negation.\par
+N64#neg() - Cloned negation.\par
+N64#iabs() - In-place absolute.\par
+N64#abs() - Cloned absolute.\par
+Comparison\par
+N64#cmp(obj) - Compare to another int64.\par
+N64#cmpn(num) - Compare to a JS number.\par
+N64#eq(obj) - Test equality against another int64.\par
+N64#eqn(num) - Test equality against a JS number.\par
+N64#gt(obj) - Greater than (int64).\par
+N64#gtn(num) - Greater than (JS number).\par
+N64#gte(obj) - Greater than or equal to (int64).\par
+N64#gten(num) - Greater than or equal to (JS number).\par
+N64#lt(obj) - Less than (int64).\par
+N64#ltn(num) - Less than (JS number).\par
+N64#lte(obj) - Less than or equal to (int64).\par
+N64#lten(num) - Less than or equal to (JS number).\par
+N64#isZero() - Test whether int64 is zero.\par
+N64#isNeg() - Test whether int64 is negative.\par
+N64#isOdd() - Test whether int64 is odd.\par
+N64#isEven() - Test whether int64 is even.\par
+Helpers\par
+N64#clone() - Clone and return a new int64.\par
+N64#inject(obj) - Inject properties from int64.\par
+N64#set(num) - Set the int64 to a JS number value.\par
+N64#join(hi, lo) - Join hi and lo bits.\par
+N64#bitLength() - Count number of bits.\par
+N64#byteLength() - Count number of bytes.\par
+N64#isSafe() - Test whether the number is less than or equal to 53 bits.\par
+N64#inspect() - Inspect number.\par
+Encoding\par
+N64#readLE(data, off) - Read number from data at off (little endian).\par
+N64#readBE(data, off) - Read number from data at off (big endian).\par
+N64#readRaw(data, off) - Read number from data at off (little endian).\par
+N64#writeLE(data, off) - Write number to data at off (little endian).\par
+N64#writeBE(data, off) - Write number to data at off (big endian).\par
+N64#writeRaw(data, off) - Write number to data at off (little endian).\par
+Conversion\par
+N64#toU64() - Cast to unsigned. Returns a U64.\par
+N64#toI64() - Cast to signed. Returns an I64.\par
+N64#toNumber() - Convert int64 to a JS number (throws on >53 bits).\par
+N64#toDouble() - Convert int64 to a JS number.\par
+N64#toInt() - Convert lo bits to a JS number.\par
+N64#toBool() - Convert to a boolean.\par
+N64#toBits() - Convert to an array containing hi and lo bits.\par
+N64#toObject() - Convert to an object containing hi and lo bits.\par
+N64#toString(base?, pad?) - Convert to string of base. Optional padding.\par
+N64#toJSON() - Convert to hex string.\par
+N64#toBN(BN) - Convert to bn.js big number (must pass BN constructor).\par
+N64#toLE(ArrayLike) - Convert to ArrayLike instance (little endian).\par
+N64#toBE(ArrayLike) - Convert to ArrayLike instance (big endian).\par
+N64#toRaw(ArrayLike) - Convert to ArrayLike instance (little endian).\par
+Constants\par
+U64.ULONG_MIN - Unsigned int32 minimum (number).\par
+U64.ULONG_MAX - Unsigned int32 maximum (number).\par
+U64.UINT32_MIN - Unsigned int32 minimum (U64).\par
+U64.UINT32_MAX - Unsigned int32 maximum (U64).\par
+U64.UINT64_MIN - Unsigned int64 minimum (U64).\par
+U64.UINT64_MAX - Unsigned int64 maximum (U64).\par
+I64.LONG_MIN - Int32 minimum (number).\par
+I64.LONG_MAX - Int32 maximum (number).\par
+I64.INT32_MIN - Int32 minimum (I64).\par
+I64.INT32_MAX - Int32 maximum (I64).\par
+I64.INT64_MIN - Int64 minimum (I64).\par
+I64.INT64_MAX - Int64 maximum (I64).\par
+Casting\par
+With mixed types, the left operand will cast the right operand to its sign.\par
+\par
+With the n-postfix methods, numbers passed into them will be cast to 32 bit integers. If the left had operand is signed, the number is cast to an int32_t. If unsigned, the number is cast to an uint32_t.\par
+\par
+Examples\par
+In JS:\par
+\par
+const a = I64(1);\par
+const b = U64('ffffffffffffffff', 16);\par
+const r = a.add(b);\par
+console.log(r.toString());\par
+In C:\par
+\par
+int64_t a = 1;\par
+uint64_t b = 0xffffffffffffffff;\par
+int64_t r = a + (int64_t)b;\par
+printf("%lld\\n", r);\par
+Outputs 0, as (int64_t)ULLONG_MAX == -1LL.\par
+\par
+In JS:\par
+\par
+const a = I64(0);\par
+const r = a.addn(0xffffffff);\par
+console.log(r.toString());\par
+In C:\par
+\par
+int64_t a = 0;\par
+int64_t r = a + (int32_t)0xffffffff;\par
+printf("%lld\\n", r);\par
+Outputs -1.\par
+\par
+In JS:\par
+\par
+const a = U64(0);\par
+const r = a.addn(-1);\par
+console.log(r.toString());\par
+In C:\par
+\par
+uint64_t a = 0;\par
+uint64_t r = a + (uint32_t)-1;\par
+printf("%llu\\n", r);\par
+Outputs 4294967295.\par
+}
+ 

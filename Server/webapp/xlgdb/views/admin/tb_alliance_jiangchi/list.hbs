@@ -1,0 +1,59 @@
+<h3>
+    {{!-- <a href="/admin/tb_alliance_jiangchi/view/create" class="actionBtn">创建</a> --}}
+    <p>奖池设置</p>
+</h3>
+<form method="GET" action="/admin/tb_alliance_jiangchi/search">
+    <div style="padding-bottom: 28px;">
+        <span style="font-size: 13px;">
+            请输入联盟ID：<input name="allianceid" autocomplete="off" type="text" class="inpMain">
+        </span>
+        <button class="mybtn">查询</button>
+    </div>
+</form>
+<table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+    <tr>
+        <td colspan="2" align="left" style="background-color: #0065B0;color:#fff">底皮(1)</td>
+    </tr>
+    <tr>
+        <td width="90" align="right">奖池金币数</td>
+        <td align="left"><input type="text" name="glods" id="glods" value="{{row.glods}}" size="50" class="inpMain" /></td>
+    </tr>
+    <tr>
+        <td width="90" align="right">天皇奖励比例</td>
+        <td align="left"><input type="text" name="tianhuang" id="tianhuang" value="{{row.tianhuang}}" size="50" class="inpMain" /></td>
+    </tr>
+    <tr>
+        <td width="90" align="right">朵皇奖励比例</td>
+        <td align="left"><input type="text" name="duohuang" id="duohuang" value="{{row.duohuang}}" size="50" class="inpMain" /></td>
+    </tr>
+    <tr>
+        <td width="90" align="right">朵朵朵奖励比例</td>
+        <td align="left"><input type="text" name="duoduoduo" id="duoduoduo" value="{{row.duoduoduo}}" size="50" class="inpMain" /></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td align="left"><input name="submit" id="submit" class="btn" type="button" value="设置" /></td>
+    </tr>
+</table>
+
+<script>
+    function doDelete(id, url) {
+        if (confirm('确认要删除吗？') == true) {
+            $.ajax({
+                url: url,
+                method: 'GET',
+                dataType: 'json',
+                data: o,
+                error: function () { },
+                success: function (response) {
+                    if (response.errcode == 0) {
+                        alert('删除成功');
+                        window.location.reload(true);
+                    } else {
+                        alert('删除失败');
+                    }
+                }
+            });
+        }
+    }
+</script>

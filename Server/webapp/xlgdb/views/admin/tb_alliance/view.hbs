@@ -1,0 +1,83 @@
+<h3>
+    <a href="{{{backurl}}}" class="actionBtn">返回管理员列表</a>
+    <p>{{{title}}}</p>
+</h3>
+<form>
+    <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+		<tr>
+			<td  width="90" align="right">sname</td>
+			<td align="right"><input type="text" name="sname" id="sname" value="{{row.sname}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">creator</td>
+			<td align="right"><input type="text" name="creator" id="creator" value="{{row.creator}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">ctime</td>
+			<td align="right"><input type="text" name="ctime" id="ctime" value="{{row.ctime}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">clubcount</td>
+			<td align="right"><input type="text" name="clubcount" id="clubcount" value="{{row.clubcount}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">allow_apply</td>
+			<td align="right"><input type="text" name="allow_apply" id="allow_apply" value="{{row.allow_apply}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">memo</td>
+			<td align="right"><input type="text" name="memo" id="memo" value="{{row.memo}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">levels</td>
+			<td align="right"><input type="text" name="levels" id="levels" value="{{row.levels}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">allianceid</td>
+			<td align="right"><input type="text" name="allianceid" id="allianceid" value="{{row.allianceid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">creatorclubid</td>
+			<td align="right"><input type="text" name="creatorclubid" id="creatorclubid" value="{{row.creatorclubid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">mgrcount</td>
+			<td align="right"><input type="text" name="mgrcount" id="mgrcount" value="{{row.mgrcount}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td  width="90" align="right">uid</td>
+			<td align="right"><input type="text" name="uid" id="uid" value="{{row.uid}}" size="50" class="inpMain" /></td>
+		</tr>
+		<tr>
+			<td>&nbps;</td>
+			<td align="right"><input name="submit" id="submit" class="btn" type="button" value="提交" /></td>
+		</tr>
+    </table>
+</form>
+<script>
+    var edit = {{ edit }};
+    var url = '{{posturl}}';
+    $("#submit").click(function () {
+        var e = false;
+        var o = $("form").serializeJson();
+        do {
+            if (!edit) {
+
+            }
+
+            if (e) {
+                break;
+            }
+            $.ajax({
+                url: url,
+                method: 'POST',
+                dataType: 'json',
+                data: o,
+                error: function () { },
+                success: function (response) {
+                    $("#err_total").text(response.errmsg).show();
+                }
+            })
+        } while (false);
+    });
+</script>

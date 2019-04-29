@@ -1,0 +1,71 @@
+<h3>
+    <a href="/admin/manager/view-1" class="actionBtn">创建管理员</a>
+    <p>管理员列表</p>
+</h3>
+<table width="100%" border="0" cellspacing="0" cellpadding="7" class="tableBasic">
+    <tr>
+		<th>roomid</th>
+		<th>roomuuid</th>
+		<th>creator</th>
+		<th>clubid</th>
+		<th>gameid</th>
+		<th>roomargs</th>
+		<th>playtimes</th>
+		<th>players</th>
+		<th>ctime</th>
+		<th>ipaddr</th>
+		<th>port</th>
+		<th>valid</th>
+		<th>times</th>
+		<th>tmlen</th>
+		<th>gameinfo</th>
+		<th>allid</th>
+		<th>basefen</th>
+		<th width="10%">操作</th>
+	</tr>
+    {{#each rows}}
+    <tr>
+		<td>{{roomid}}</td>
+		<td>{{roomuuid}}</td>
+		<td>{{creator}}</td>
+		<td>{{clubid}}</td>
+		<td>{{gameid}}</td>
+		<td>{{roomargs}}</td>
+		<td>{{playtimes}}</td>
+		<td>{{players}}</td>
+		<td>{{ctime}}</td>
+		<td>{{ipaddr}}</td>
+		<td>{{port}}</td>
+		<td>{{valid}}</td>
+		<td>{{times}}</td>
+		<td>{{tmlen}}</td>
+		<td>{{gameinfo}}</td>
+		<td>{{allid}}</td>
+		<td>{{basefen}}</td>
+		<td align="center"><a href="/admin/tb_rooms/view/update?id={{user_id}}&page={{../curr_page}}">编辑</a> | <a href="javascript:doDelete(id, '{{../curr_page}}')">删除</a></td>
+	</tr>
+    {{/each}}
+</table>
+{{> page}}
+
+<script>
+    function doDelete(id, url) {
+        if (confirm('确认要删除吗？') == true) {
+            $.ajax({
+                url: url,
+                method: 'GET',
+                dataType: 'json',
+                data: o,
+                error: function () { },
+                success: function (response) {
+                    if (response.errcode == 0) {
+                        alert('删除成功');
+                        window.location.reload(true);
+                    } else {
+                        alert('删除失败');
+                    }
+                }
+            });
+        }
+    }
+</script>
