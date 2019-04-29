@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "6d28d1c8-cf16-4169-ba0d-37622eb0aa45",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "扯旋游戏页-规则": {
+      "ver": "1.0.3",
+      "uuid": "b46b263d-e8d7-43ef-af40-a662dbcd9bea",
+      "rawTextureUuid": "6d28d1c8-cf16-4169-ba0d-37622eb0aa45",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 720,
+      "height": 1280,
+      "rawWidth": 720,
+      "rawHeight": 1280,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

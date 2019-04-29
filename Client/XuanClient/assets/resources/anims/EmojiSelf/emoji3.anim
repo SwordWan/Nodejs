@@ -1,0 +1,55 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "emoji3",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.1,
+  "sample": 60,
+  "speed": 0.1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "37e7c2ac-8bb4-4fab-ac67-a92332cac2ef"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "96c63b1d-70d9-4af8-9bdc-baba86b3c072"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "1c1a6c6e-c96a-40f3-83de-ceb779d87b0b"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "3d1b088e-31c0-4fec-a0b9-e07b3d9391c0"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "f9fe4d06-6cd2-4fd1-a288-7b781f9a879e"
+            }
+          },
+          {
+            "frame": 0.08333333333333333,
+            "value": {
+              "__uuid__": "e75ab49e-ad19-46a1-bfef-9cb74fa17591"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

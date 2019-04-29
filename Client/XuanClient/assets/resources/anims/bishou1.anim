@@ -1,0 +1,63 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "bishou1",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.23333333333333334,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "ba481579-4b0e-428f-aa00-fd43e2914cda"
+            }
+          },
+          {
+            "frame": 0.21666666666666667,
+            "value": null
+          }
+        ]
+      }
+    },
+    "props": {
+      "rotation": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 0.05,
+          "value": 90
+        },
+        {
+          "frame": 0.1,
+          "value": 180
+        },
+        {
+          "frame": 0.15,
+          "value": 270
+        },
+        {
+          "frame": 0.2,
+          "value": 360
+        }
+      ],
+      "scale": [
+        {
+          "frame": 0,
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": -1,
+            "y": 1
+          }
+        }
+      ]
+    }
+  },
+  "events": []
+}

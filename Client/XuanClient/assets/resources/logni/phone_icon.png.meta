@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "3bb64340-ca9a-480d-8a09-e8421bce0b21",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "phone_icon": {
+      "ver": "1.0.3",
+      "uuid": "59de5c90-3416-4a1c-9604-11d607c392a0",
+      "rawTextureUuid": "3bb64340-ca9a-480d-8a09-e8421bce0b21",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1,
+      "offsetY": 1,
+      "trimX": 2,
+      "trimY": 0,
+      "width": 469,
+      "height": 697,
+      "rawWidth": 471,
+      "rawHeight": 699,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "ce562172-b723-42f6-8d0e-ce96b205df34",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "扯旋游戏页-表情": {
+      "ver": "1.0.3",
+      "uuid": "5497a1aa-0443-4a1f-8e9d-6f60823e62de",
+      "rawTextureUuid": "ce562172-b723-42f6-8d0e-ce96b205df34",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 720,
+      "height": 1280,
+      "rawWidth": 720,
+      "rawHeight": 1280,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

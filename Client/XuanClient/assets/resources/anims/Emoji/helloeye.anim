@@ -1,0 +1,37 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "helloeye",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.11666666666666667,
+  "sample": 60,
+  "speed": 0.1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "394ce542-458e-4cfb-a121-d1ab8918544d"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "d9bec502-4076-40c9-ab4f-6f91bcda4f59"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "ac878ad9-3056-4ff8-a6b5-3c0cb48e75b1"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

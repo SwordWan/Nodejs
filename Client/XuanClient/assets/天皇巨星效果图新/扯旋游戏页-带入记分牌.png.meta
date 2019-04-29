@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "7e65566c-8ddd-4fd9-96ea-d2a05d6a0d35",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "扯旋游戏页-带入记分牌": {
+      "ver": "1.0.3",
+      "uuid": "e6b63256-1ad1-40c2-802a-516867a58155",
+      "rawTextureUuid": "7e65566c-8ddd-4fd9-96ea-d2a05d6a0d35",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 720,
+      "height": 1280,
+      "rawWidth": 720,
+      "rawHeight": 1280,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

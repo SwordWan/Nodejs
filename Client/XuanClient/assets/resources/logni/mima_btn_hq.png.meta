@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "72ce2fd6-5094-4e21-965a-4ee526c2ef98",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "mima_btn_hq": {
+      "ver": "1.0.3",
+      "uuid": "832c2de2-e3c9-4eca-8251-fa5f8a6ca46d",
+      "rawTextureUuid": "72ce2fd6-5094-4e21-965a-4ee526c2ef98",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": 0,
+      "trimX": 1,
+      "trimY": 0,
+      "width": 266,
+      "height": 75,
+      "rawWidth": 267,
+      "rawHeight": 75,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "cce95bf3-a201-46e7-bb4d-6a7f00fbfe70",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "game_liuzhuo_bg3": {
+      "ver": "1.0.3",
+      "uuid": "040e214b-dd6f-4148-ab75-64498042d2cd",
+      "rawTextureUuid": "cce95bf3-a201-46e7-bb4d-6a7f00fbfe70",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0.5,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1080,
+      "height": 734,
+      "rawWidth": 1080,
+      "rawHeight": 735,
+      "borderTop": 193,
+      "borderBottom": 300,
+      "borderLeft": 355,
+      "borderRight": 248,
+      "subMetas": {}
+    }
+  }
+}

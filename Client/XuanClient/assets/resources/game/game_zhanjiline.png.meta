@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "a48c19e4-0276-49f5-b77b-c36844e23639",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "game_zhanjiline": {
+      "ver": "1.0.3",
+      "uuid": "3c1c5ea2-f180-492d-bbda-201dc1adc3e0",
+      "rawTextureUuid": "a48c19e4-0276-49f5-b77b-c36844e23639",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": 1,
+      "trimX": 1,
+      "trimY": 0,
+      "width": 929,
+      "height": 4,
+      "rawWidth": 930,
+      "rawHeight": 6,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

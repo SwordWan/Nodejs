@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "0145f672-2c32-4856-8c83-d6217522d463",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "扯旋游戏页-奖池": {
+      "ver": "1.0.3",
+      "uuid": "82df2c72-924b-4cc6-8739-4c041ccf59c2",
+      "rawTextureUuid": "0145f672-2c32-4856-8c83-d6217522d463",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 720,
+      "height": 1280,
+      "rawWidth": 720,
+      "rawHeight": 1280,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

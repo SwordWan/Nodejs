@@ -1,0 +1,109 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "huoba",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.6666666666666666,
+  "sample": 60,
+  "speed": 0.5,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "47307d21-96b1-4a66-90e3-be0296314c85"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "31148726-7bf6-482b-a1ac-5a21425fdba4"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "15602e0b-6f1d-484c-a117-453e13d05c35"
+            }
+          },
+          {
+            "frame": 0.3,
+            "value": {
+              "__uuid__": "93e15685-eeb0-4364-9d38-7fcc7037a17d"
+            }
+          },
+          {
+            "frame": 0.35,
+            "value": {
+              "__uuid__": "471babcb-8b83-406d-bcb7-e25267c510e5"
+            }
+          },
+          {
+            "frame": 0.4,
+            "value": {
+              "__uuid__": "1ae56225-a2e4-46ac-9ed3-adbb26baa7a3"
+            }
+          },
+          {
+            "frame": 0.45,
+            "value": {
+              "__uuid__": "31148726-7bf6-482b-a1ac-5a21425fdba4"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "15602e0b-6f1d-484c-a117-453e13d05c35"
+            }
+          },
+          {
+            "frame": 0.55,
+            "value": {
+              "__uuid__": "93e15685-eeb0-4364-9d38-7fcc7037a17d"
+            }
+          },
+          {
+            "frame": 0.6,
+            "value": {
+              "__uuid__": "471babcb-8b83-406d-bcb7-e25267c510e5"
+            }
+          },
+          {
+            "frame": 0.65,
+            "value": {
+              "__uuid__": "1ae56225-a2e4-46ac-9ed3-adbb26baa7a3"
+            }
+          }
+        ]
+      }
+    },
+    "props": {
+      "rotation": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 0.05,
+          "value": 90
+        },
+        {
+          "frame": 0.1,
+          "value": 180
+        },
+        {
+          "frame": 0.15,
+          "value": 270
+        },
+        {
+          "frame": 0.2,
+          "value": 360
+        }
+      ]
+    }
+  },
+  "events": []
+}

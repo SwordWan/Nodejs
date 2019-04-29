@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "e5beeb28-9498-4ab0-90b6-7e988129746a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "game_emzhihui": {
+      "ver": "1.0.3",
+      "uuid": "a8081498-bb29-40d2-a79d-f9cffa042859",
+      "rawTextureUuid": "e5beeb28-9498-4ab0-90b6-7e988129746a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 921,
+      "height": 151,
+      "rawWidth": 921,
+      "rawHeight": 151,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

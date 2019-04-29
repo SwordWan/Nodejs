@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "c74872ed-cb1d-4032-b59b-4e736f47f88e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "game_fenbg2": {
+      "ver": "1.0.3",
+      "uuid": "63c4ef05-9cef-4ed9-b2e1-1d1157aef60a",
+      "rawTextureUuid": "c74872ed-cb1d-4032-b59b-4e736f47f88e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1,
+      "offsetY": 1,
+      "trimX": 2,
+      "trimY": 0,
+      "width": 829,
+      "height": 340,
+      "rawWidth": 831,
+      "rawHeight": 342,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

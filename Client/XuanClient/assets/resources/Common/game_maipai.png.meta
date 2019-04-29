@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "56d1bac5-c3f2-4688-8bec-e6c72db24edd",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "game_maipai": {
+      "ver": "1.0.3",
+      "uuid": "a3c25d0b-7ab1-4bde-8e29-bee8d14d465f",
+      "rawTextureUuid": "56d1bac5-c3f2-4688-8bec-e6c72db24edd",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 153,
+      "height": 153,
+      "rawWidth": 153,
+      "rawHeight": 153,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

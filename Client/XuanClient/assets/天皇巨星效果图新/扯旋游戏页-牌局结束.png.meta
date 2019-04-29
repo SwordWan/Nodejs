@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "82c7e0f1-6ab3-41be-aa0c-968f47d483df",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "扯旋游戏页-牌局结束": {
+      "ver": "1.0.3",
+      "uuid": "fc47a479-0f75-4a89-b087-cf13c77b5406",
+      "rawTextureUuid": "82c7e0f1-6ab3-41be-aa0c-968f47d483df",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 720,
+      "height": 1280,
+      "rawWidth": 720,
+      "rawHeight": 1280,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

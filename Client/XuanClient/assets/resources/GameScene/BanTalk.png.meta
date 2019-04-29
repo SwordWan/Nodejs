@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "a042f475-5973-4112-bb38-eaefaf76015d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "BanTalk": {
+      "ver": "1.0.3",
+      "uuid": "9a8e05ba-b2e5-4a00-b35e-e7e2f9493a9a",
+      "rawTextureUuid": "a042f475-5973-4112-bb38-eaefaf76015d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -4.5,
+      "offsetY": 136.5,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 115,
+      "height": 747,
+      "rawWidth": 128,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "0c31708e-1c22-4792-9a07-7a98eefdefe7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "game_moneybg": {
+      "ver": "1.0.3",
+      "uuid": "a1c075d9-5a9f-40ee-9a7e-60c5b90fa1af",
+      "rawTextureUuid": "0c31708e-1c22-4792-9a07-7a98eefdefe7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1,
+      "offsetY": -0.5,
+      "trimX": 12,
+      "trimY": 3,
+      "width": 193,
+      "height": 58,
+      "rawWidth": 219,
+      "rawHeight": 63,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

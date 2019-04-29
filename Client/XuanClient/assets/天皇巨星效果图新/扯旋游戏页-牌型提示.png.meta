@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "ad89eefe-03c3-4667-b031-b261a490dea9",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "扯旋游戏页-牌型提示": {
+      "ver": "1.0.3",
+      "uuid": "daa6e322-b95d-44af-af60-a0c4cc269a68",
+      "rawTextureUuid": "ad89eefe-03c3-4667-b031-b261a490dea9",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 720,
+      "height": 1280,
+      "rawWidth": 720,
+      "rawHeight": 1280,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

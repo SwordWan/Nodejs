@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "d485c68f-caed-43c5-9acf-2aca7d65199c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "JackPot": {
+      "ver": "1.0.3",
+      "uuid": "ef56272a-6a1a-4bfa-ad6a-8b445116047e",
+      "rawTextureUuid": "d485c68f-caed-43c5-9acf-2aca7d65199c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1,
+      "offsetY": 9,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 1018,
+      "height": 1002,
+      "rawWidth": 1024,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

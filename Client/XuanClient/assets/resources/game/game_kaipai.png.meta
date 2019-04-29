@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "437dc5d6-eb7b-4213-a7f4-ce056ed8d904",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "game_kaipai": {
+      "ver": "1.0.3",
+      "uuid": "96d20a43-b1d5-4eba-a643-be9ac34e9136",
+      "rawTextureUuid": "437dc5d6-eb7b-4213-a7f4-ce056ed8d904",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 153,
+      "height": 153,
+      "rawWidth": 153,
+      "rawHeight": 153,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
